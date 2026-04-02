@@ -1,7 +1,6 @@
 # Guide to creating a claude code skill with a very specific and refined structure
 
 ## File Structure
-- skills should always be created at: root/openclaw/workspace/skills
 - each skill gets its own folder
 - each skill contains a SKILL.md file
 - any example files go in /examples

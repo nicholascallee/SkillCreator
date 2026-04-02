@@ -1,6 +1,6 @@
 ---
 name: skill-creator
-description: Create or update OpenClaw/Claude-style skills with a strict, repeatable structure. Use when a user asks to build a new skill, refactor an existing skill, add required sections, create references/tools/examples/subtasks, or validate that a skill conforms to the defined template and workflow.
+description: Create or update Claude-style skills with a strict, repeatable structure. Use when a user asks to build a new skill, refactor an existing skill, add required sections, create references/tools/examples/subtasks, or validate that a skill conforms to the defined template and workflow.
 argument-hint: PROMPT , SKILL_OUTPUT_LOCATION, SKILL_NAME
 ---
 
@@ -11,7 +11,7 @@ argument-hint: PROMPT , SKILL_OUTPUT_LOCATION, SKILL_NAME
 
 ## Variables
 PROMPT
-SKILL_OUTPUT_LOCATION : `/root/.openclaw/workspace/skills/[SKILL_NAME]`
+SKILL_OUTPUT_LOCATION : `/root/[User Name]/workspace/skills/[SKILL_NAME]`
 SKILL_NAME : [you decide if not provided]
 
 ## Instructions
@@ -24,7 +24,7 @@ SKILL_NAME : [you decide if not provided]
 4. Brainstorm possible ways to create this skill adhearing to the `/references/skill_creation_guide.md` and the answered questions
 5. After reviewing possible options, determine the most precise and straightforward way to effectivly create the skill under the guidelines in the `/references/skill_creation_guide.md` and following the answered questions
 6. Consider the size of each step in the workflow, think about if its so big or will require so many substeps that it may affect the quality of the agentic work you are doing due to context bloat. also think about if its such a large task that its somewhat unclear for any agent that would run it.
-  - if either is true. brainstorm each of the steps needin substeps to come up with each subtask set of steps. then create the subtask md files under `root/.openclaw/workspace/skills/[skill name]/subtasks`.
+  - if either is true. brainstorm each of the steps needin substeps to come up with each subtask set of steps. then create the subtask md files under `root/[User Name]/workspace/skills/[skill name]/subtasks`.
 7. Create skill directory at `SKILL_OUTPUT_LOCATION`.
 8. Create only needed subfolders from this allowed set:
    - `references/` for docs/templates/schema/context loaded as needed.
@@ -53,7 +53,7 @@ SKILL_NAME : [you decide if not provided]
 16. Return a concise completion report: skill name, purpose, created files, and workflow summary.
 
 ## Expected Output
-- a new skill folder in root/.openclaw/workspace/skills
+- a new skill folder in `root/[User Name]/workspace/skills`
 - a SKILL.md file in that folder containing a skill that fits the format in the "[skill name]/references/skill_creation_guide.md"
 - any code files or tools are contained in the [skill name]//tools folder
 - any reference douments are contained in the [skill name]//references folder
